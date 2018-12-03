@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+
+    window.onload=function(){
+      
+function opengreetingCard() {
+  $(this).toggleClass('open');
+}
+
+$('.greetingCard').click(opengreetingCard);
+
+
+    }
+
+
+</script>
+
+
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css?family=Calligraffitti|Nunito+Sans|Mr+Dafoe');
+
+
+
+.greetingCard {
+    perspective: 1200px;  
+    margin: 40px 0;
+    position: relative;
+    left: 35%;
+	display:inline-block;
+}
+
+.tile {
+    width:400px;
+    height:400px;
+    position: absolute;
+}
+
+.greetingCard .front {
+    -webkit-transition-duration: 2s;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform-style: preserve-3d; 
+    z-index: 2; 
+}
+
+.greetingCard .front .outside,
+.greetingCard .front .inside {
+    position: absolute;
+    -webkit-backface-visibility: hidden; 
+}
+
+.greetingCard .front .outside {
+        background: #e5dbcf;
+		border:#efece9 solid 4px;
+		
+}
+.greetingCard .front .outside h1 {text-align:center;
+		padding:0px 0;
+		font-family: 'Calligraffitti', cursive;
+		font-size: 100px;
+		color: #454164;
+		line-height:1.2;
+		
+}
+.greetingCard .front .inside {
+     background:  #e5dbcf;
+	
+    -webkit-transform: rotateY(-180deg); 
+}
+
+.in-bottom {
+    z-index: 1;
+	box-shadow:20px 20px 50px grey;  
+	background-color: #f7f4f0;
+	
+}
+
+.in-bottom p {
+	color:#454164;
+	font-family: 'Nunito Sans', sans-serif;
+	margin: 18px;
+	font-size: 18px;
+}
+
+.in-bottom .sig {
+	float:right;
+	font-size: 30px;
+	color: #454164;
+	font-family: 'Mr Dafoe', cursive;
+	margin: 20px;
+
+}
+
+
+.greetingCard.open .front {
+    -webkit-transform: rotateY(-180deg); 
+}
+
+</style>
+</head>
+<body>
+
+
+  <div class="greetingCard">
+    <div class="tile front">
+        <div class="tile outside"><h1>Thank You</h1></div>
+        <div class="tile inside"></div>
+    </div>
+    <div class="tile in-bottom"><p>Mr. Jon Ballard, </p>
+	<p>&emsp;Thank you for reaching out to me on LinkedIn. I was ecstatic to receive your invitation to interview for the Front-End Developer position. It was great to hear more about your company, the position and tour your lovely officespace. I really appreciate you taking the time to pop in and make an introduction. </p>
+	<span class="sig">&ndash; Tricia Pesce</span></div>
+</div>
+
+
+</body>
+</html>
+
+
+
